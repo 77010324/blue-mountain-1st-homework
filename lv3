@@ -1,0 +1,28 @@
+package main
+
+import "fmt"
+
+func prime(n int) bool {
+	if n <= 1 {
+		return false
+	}
+
+	for z := 1; z <= int(n); z++ {
+		if n%z == 0 {
+
+			return false
+
+		}
+	}
+	return true
+}
+func main() {
+	N := 77
+
+	if prime(N) {
+		fmt.Printf("%d是素数", N)
+	} else {
+		fmt.Printf("%d不是素数", N)
+	}
+
+}
