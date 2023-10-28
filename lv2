@@ -1,0 +1,12 @@
+package main
+
+import "fmt"
+import "math"
+
+func main() {
+	Pi := math.Pi
+	r := 5.7
+	result := Pi * r * r
+	fmt.Println(result)
+
+}
