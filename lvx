@@ -1,0 +1,42 @@
+package main
+
+import (
+	"fmt"
+	"math/rand"
+	"time"
+)
+
+func find(goal int) bool {
+	min := 1
+	max := 100
+
+	for min < max {
+		var middle int
+		middle = (min + max) / 2
+		if goal == middle {
+
+			return true
+		}
+
+		if goal > middle {
+			min = middle
+		} else {
+			max = middle
+		}
+	}
+	return false
+}
+
+func main() {
+	rand.Seed(time.Now().UnixNano())
+	goal := rand.Intn(100)
+	fmt.Println("随机产生的数为", goal)
+
+	var work bool = find(goal)
+
+	if work {
+		fmt.Println("找到该数值")
+	} else {
+		fmt.Println("未找到该数值")
+	}
+}
